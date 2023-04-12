@@ -4,58 +4,68 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Frontmatter Generator</title>
   </head>
   <body>
-    <form>
-      <div>
-        <label for="author">Author:</label>
-        <select id="author">
-          <option value="sf-adams" selected>sf-adams</option>
-          <option value="author-2">Author 2</option>
-          <option value="author-3">Author 3</option>
-        </select>
-      </div>
-      <div>
-        <label for="title">Title:</label>
-        <input type="text" id="title" required />
-      </div>
-      <div>
-        <label for="postSlug">Post Slug:</label>
-        <input type="text" id="postSlug" />
-        <button type="button" onclick="slugifyTitle()">Slugify</button>
-      </div>
-      <div>
-        <label for="featured">Featured:</label>
-        <label><input type="radio" name="featured" value="false" checked/>No</label>
-        <label
-          ><input type="radio" name="featured" value="true" />Yes</label
-        >
-      </div>
-      <div>
-        <label for="draft">Draft:</label>
-        <label><input type="radio" name="draft" value="false" />No</label>
-        <label
-          ><input type="radio" name="draft" value="true" checked />Yes</label
-        >
-      </div>
-      <div>
-        <label for="tags">Tags:</label>
-        <input type="text" id="tags" />
-      </div>
-      <div>
-        <label for="ogImage">OG Image:</label>
-        <input type="text" id="ogImage" />
-      </div>
-      <div>
-        <label for="description">Description:</label>
-        <textarea id="description"></textarea>
-      </div>
-      <button type="button" onclick="generateFrontmatter()">
-        Generate Frontmatter
-      </button>
-    </form>
-    <pre id="output"></pre>
-    <script src="app.js"></script>
+    <div class="container">
+      <form>
+        <div>
+          <label for="author">Author:</label>
+          <select id="author">
+            <option value="sf-adams" selected>sf-adams</option>
+            <option value="author-2">Author 2</option>
+            <option value="author-3">Author 3</option>
+          </select>
+        </div>
+        <div>
+          <label for="title">Title:</label>
+          <input type="text" id="title" required />
+        </div>
+        <div>
+          <label for="postSlug">Post Slug:</label>
+          <input type="text" id="postSlug" />
+          <button type="button" onclick="slugifyTitle()">Slugify</button>
+        </div>
+        <div class="radio">
+          <div>
+            <label for="featured">Featured:</label>
+            <label
+              ><input
+                type="radio"
+                name="featured"
+                value="false"
+                checked
+              />No</label
+            >
+            <label><input type="radio" name="featured" value="true" />Yes</label>
+          </div>
+          <div>
+            <label for="draft">Draft:</label>
+            <label><input type="radio" name="draft" value="false" />No</label>
+            <label
+              ><input type="radio" name="draft" value="true" checked />Yes</label
+            >
+          </div>
+        </div>
+        <div>
+          <label for="tags">Tags:</label>
+          <input type="text" id="tags" required />
+        </div>
+        <div>
+          <label for="ogImage">OG Image:</label>
+          <input type="text" id="ogImage" placeholder="Leave blank for default NMFC image"/>
+        </div>
+        <div>
+          <label for="description">Description:</label>
+          <textarea id="description"></textarea>
+        </div>
+        <button type="button" onclick="generateFrontmatter()">
+          Generate Frontmatter
+        </button>
+      </form>
+      <pre id="output"></pre>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>
